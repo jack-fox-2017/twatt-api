@@ -42,8 +42,9 @@ var postTwit = (req, res) => {
 }
 
 var searchTweet = (req, res) => {
+  var search = req.query.q
   oauth.get(
-    'https://api.twitter.com/1.1/search/tweets.json?q=hacktiv8',
+    `https://api.twitter.com/1.1/search/tweets.json?q=${search}`,
     process.env.ACCESS_TOKEN, //test user token
     process.env.ACCESS_SECRET, //test user secret
     (err, data) => {
