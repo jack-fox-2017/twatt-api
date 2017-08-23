@@ -44,8 +44,19 @@ let searchTweet = (req, res) => {
   })
 }
 
+let seeFollowers = (req, res) => {
+  oauth.get('https://api.twitter.com/1.1/followers/list.json',
+  process.env.ACCESS_TOKEN,
+  process.env.ACCESS_TOKEN_SECRET,
+  function(e, data, response){
+    if(e) console.error(e);
+    res.send(data)
+  })
+}
+
 module.exports = {
   seeTimeline,
   postTweet,
-  searchTweet
+  searchTweet,
+  seeFollowers
 };

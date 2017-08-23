@@ -16,5 +16,6 @@ const oauth = new OAuth(
 router.get('/timeline', controller.seeTimeline)
 router.post('/post', controller.postTweet)
 router.get('/search', controller.searchTweet)
+router.get('/followers', controller.seeFollowers)
 
 module.exports = router;
