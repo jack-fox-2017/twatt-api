@@ -55,11 +55,10 @@ module.exports = {
   },
   posttweet: function (req,res) {
     oauth.post(
-       `https://api.twitter.com/1.1/statuses/update.json?status=${req.body.status}`,
+       `https://api.twitter.com/1.1/statuses/update.json`,
        process.env.ACCESS_TOKEN, //test user token
        process.env.ACCESS_TOKEN_SECRET, //test user secret
-       req.body.status,
-       'cc',
+       {"status":`${req.body.status}`},
        function (e, data, respond){
          if (e) console.error(e);
          res.send(JSON.parse(data));
