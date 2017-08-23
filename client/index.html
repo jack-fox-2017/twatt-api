@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <title>My Twitter App</title>
+  </head>
+  <body>
+    <div class="col-md-6 col-md-offset-3">
+      <h3>My Tweets</h3>
+      <button type="button" onclick="loadTwit()">klik to load data</button>
+      <div id="homes"></div>
+    </div>
+    <script>
+      function loadTwit() {
+        $.ajax({
+          url: 'http://localhost:3000/twitter',
+          type: 'GET',
+          datatype: 'json',
+          success: data => {
+            console.log(data);
+            // var i = 101;
+            data.forEach(d => {
+              $('#homes').append(`
+                  <div style="color:999000">
+                    <p>
+                      ${d.text}
+                    </p>
+                  </div>
+                `)
+            });
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
