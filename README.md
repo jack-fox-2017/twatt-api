@@ -9,6 +9,7 @@ Route | HTTP | Description
 `/twatt/timeline` | GET | Get timeline
 `/twatt/usertimeline` | GET | Get user timeline
 `/twatt/search/:keyword` | GET | Get recent tweets update by keyword (search)
+`/twatt/postStatus` | POST | Create a new twatt post
 
 ## Usage
 With only npm:
