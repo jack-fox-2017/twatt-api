@@ -22,7 +22,7 @@ let seeTimeline = (req, res) => {
 }
 
 let postTweet = (req, res) => {
-  oauth.post(`https://api.twitter.com/1.1/statuses/update.json?status=${req.body.value}`,
+  oauth.post(`https://api.twitter.com/1.1/statuses/update.json?status=${req.body.key}`,
   process.env.ACCESS_TOKEN,
   process.env.ACCESS_TOKEN_SECRET,
 	'status updated',
