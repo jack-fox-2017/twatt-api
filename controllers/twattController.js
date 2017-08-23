@@ -38,7 +38,7 @@ const getHomeTimeline = function (req,res) {
         'HMAC-SHA1'
       );
       oauth.get(
-        `https://api.twitter.com/1.1/statuses/home_timeline.json?q=${req.params.home_timeline}`,
+        `https://api.twitter.com/1.1/statuses/home_timeline.json?q=${req.params.account_name}`,
         // 'your user token for this app', //test user token
         process.env.USER_TOKEN,
         // 'your user secret for this app', //test user secret
